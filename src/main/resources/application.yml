@@ -1,0 +1,28 @@
+spring:
+    application:
+        name: insurance_system
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://insurancedb.cz4sqiw04pdz.ap-northeast-2.rds.amazonaws.com:3306/insurance_system?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+        username: admin
+        password: boonsan2
+    jmx:
+        enabled: false
+    jpa:
+        hibernate:
+            ddl-auto: none
+        show-sql: true
+mybatis:
+    mapper-locations: classpath:mapper/*.xml
+    type-aliases-package: com.example.insurance_system.insurance.entity
+    configuration:
+        map-underscore-to-camel-case: true
+server:
+    port: 8080
+logging:
+    level:
+        root: error
+        org:
+            springframework: info
+            springframework.web: debug
+            springframework.boot.autoconfigure.web: debug
